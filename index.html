@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>बालाजी कम्प्यूटर सेंटर उसहैत</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#0057b8;
+    --secondary:#0f172a;
+    --white:#ffffff;
+    --light:#f1f5f9;
+    --green:#25D366;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:#222;
+}
+
+nav{
+    width:100%;
+    background:rgba(15,23,42,0.95);
+    color:white;
+    padding:15px 30px;
+    position:sticky;
+    top:0;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:15px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+    background:
+    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero h1{
+    font-size:58px;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 45px;
+    background:linear-gradient(45deg,#0057b8,#0099ff);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:20px;
+    font-weight:600;
+    transition:0.3s;
+    box-shadow:0 10px 25px rgba(0,87,184,0.4);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:42px;
+    color:var(--secondary);
+}
+
+.courses{
+    padding:80px 20px;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin:15px 0;
+    color:var(--primary);
+}
+
+.card p{
+    font-size:15px;
+    line-height:1.7;
+}
+
+.form-section{
+    padding:80px 20px;
+    background:white;
+}
+
+.form-container{
+    max-width:700px;
+    margin:auto;
+    background:var(--light);
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-container h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:var(--secondary);
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    background:white;
+}
+
+.submit-btn{
+    width:100%;
+    padding:16px;
+    background:var(--green);
+    color:white;
+    border:none;
+    border-radius:12px;
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    background:#128C7E;
+}
+
+.features{
+    padding:80px 20px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.feature-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.feature-box h3{
+    margin:15px 0;
+    color:var(--primary);
+}
+
+footer{
+    background:var(--secondary);
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+.whatsapp-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#25D366;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:30px;
+    text-decoration:none;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.logo{
+    font-size:18px;
+}
+
+.menu{
+    display:none;
+}
+
+.btn{
+    font-size:16px;
+    padding:14px 30px;
+}
+
+.section-title h2{
+    font-size:30px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">बालाजी कम्प्यूटर सेंटर</div>
+
+<div class="menu">
+<a href="#courses">Courses</a>
+<a href="#features">Features</a>
+<a href="#admission">Admission</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<h1>आपके उज्ज्वल भविष्य की शुरुआत यहाँ से</h1>
+
+<p>
+भारत सरकार द्वारा मान्यता प्राप्त ISO 9001:2015 Certified संस्थान।
+ADCA, PGDCA, CCC, Tally, Typing तथा अन्य कम्प्यूटर कोर्स उपलब्ध।
+</p>
+
+<a href="#admission" class="btn">ऑनलाइन एडमिशन लें</a>
+</div>
+</section>
+
+<section class="courses" id="courses">
+
+<div class="section-title">
+<h2>हमारे लोकप्रिय कोर्स</h2>
+</div>
+
+<div class="course-grid">
+
+<div class="card">
+<h3>ADCA</h3>
+<p>1 वर्ष का एडवांस डिप्लोमा कम्प्यूटर एप्लीकेशन कोर्स।</p>
+</div>
+
+<div class="card">
+<h3>PGDCA</h3>
+<p>प्रोफेशनल कम्प्यूटर डिप्लोमा सरकारी व निजी नौकरी हेतु।</p>
+</div>
+
+<div class="card">
+<h3>Tally Prime</h3>
+<p>GST सहित कम्प्लीट अकाउंटिंग कोर्स।</p>
+</div>
+
+<div class="card">
+<h3>CCC / BCC</h3>
+<p>NIELIT आधारित कम्प्यूटर सर्टिफिकेट कोर्स।</p>
+</div>
+
+</div>
+</section>
+
+<section class="features" id="features">
+
+<div class="section-title">
+<h2>हमारी विशेषताएं</h2>
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-box">
+<h3>100% Practical</h3>
+<p>हर छात्र को प्रैक्टिकल लैब सुविधा।</p>
+</div>
+
+<div class="feature-box">
+<h3>Experienced Teachers</h3>
+<p>अनुभवी एवं प्रोफेशनल टीचर्स।</p>
+</div>
+
+<div class="feature-box">
+<h3>Certificate</h3>
+<p>मान्यता प्राप्त प्रमाण पत्र।</p>
+</div>
+
+<div class="feature-box">
+<h3>Affordable Fees</h3>
+<p>कम फीस में बेहतरीन शिक्षा।</p>
+</div>
+
+</div>
+</section>
+
+<section class="form-section" id="admission">
+
+<div class="form-container">
+
+<h2>ऑनलाइन एडमिशन फॉर्म</h2>
+
+<form id="admissionForm">
+
+<div class="form-group">
+<label>पूरा नाम *</label>
+<input type="text" id="name" required>
+</div>
+
+<div class="form-group">
+<label>पिता का नाम *</label>
+<input type="text" id="father" required>
+</div>
+
+<div class="form-group">
+<label>मोबाइल नंबर *</label>
+<input type="tel" id="phone" required>
+</div>
+
+<div class="form-group">
+<label>कोर्स चुनें *</label>
+<select id="course" required>
+<option value="">कोर्स चुनें</option>
+<option>ADCA</option>
+<option>PGDCA</option>
+<option>Tally Prime</option>
+<option>CCC</option>
+<option>Typing</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>पूरा पता *</label>
+<textarea id="address" rows="4" required></textarea>
+</div>
+
+<button type="submit" class="submit-btn">
+व्हाट्सएप पर सबमिट करें
+</button>
+
+</form>
+</div>
+</section>
+
+<footer>
+<h3>बालाजी कम्प्यूटर सेंटर उसहैत</h3>
+<p>Center Head : रामप्रकाश श्रीवास्तव</p>
+<p>मोबाइल : 8791841181</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/918791841181" target="_blank">
+☎
+</a>
+
+<script>
+
+document.getElementById('admissionForm').addEventListener('submit',function(e){
+
+    e.preventDefault();
+
+    const name=document.getElementById('name').value;
+    const father=document.getElementById('father').value;
+    const phone=document.getElementById('phone').value;
+    const course=document.getElementById('course').value;
+    const address=document.getElementById('address').value;
+
+    const message=
+`🎓 नया एडमिशन आवेदन
+
+👤 नाम : ${name}
+👨 पिता : ${father}
+📱 मोबाइल : ${phone}
+💻 कोर्स : ${course}
+🏠 पता : ${address}`;
+
+    const number='918791841181';
+
+    window.open(`https://wa.me/${number}?text=${encodeURIComponent(message)}`,'_blank');
+
+    alert('फॉर्म सफलतापूर्वक सबमिट हो गया');
+
+    document.getElementById('admissionForm').reset();
+
+});
+
+</script>
+
+</body>
+</html>
